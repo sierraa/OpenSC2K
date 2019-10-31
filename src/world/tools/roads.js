@@ -31,9 +31,9 @@ export default class roads {
     let ex = this.end.x;
     let ey = this.end.y;
     
-    if (sx == ex && sy != ey) this.direction = 'ns';
+    if (sx === ex && sy !== ey) this.direction = 'ns';
 
-    if (sx != ex && sy == ey) this.direction = 'ew';
+    if (sx !== ex && sy === ey) this.direction = 'ew';
   }
 
 
@@ -54,12 +54,14 @@ export default class roads {
     });
 
     this.calculateDirection();
-
-    if (this.cells.length > 0)
-      this.cells.forEach((cell) => {
-        cell.tiles.set(CONST.T_ROAD, this.tile[this.direction]);
-        cell.tiles[CONST.T_ROAD].create();
-      });
+    this.cells.forEach((cell) => {
+      cell.tiles.set(CONST.T_ROAD, this.tile[this.direction]);
+      cell.tiles[CONST.T_ROAD].create();
+    });
+    // for (var i = 0; i < this.cells.length; i++) {
+    // TODO: keep track of each previous cell
+    // TODO: check adjacent tiles to determine
+    // }
   }
 
 

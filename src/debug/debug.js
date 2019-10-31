@@ -49,12 +49,16 @@ export default class debug {
 
     let tools = this.gui.addFolder('Tools');
     tools.add(this.toggleTool, 'roads', 'Roads');
+    tools.add(this.toggleTool, 'rails', 'Rails');
   }
 
   toggleToolInit() {
     return {
       roads: () => {
         this.scene.events.selectedTool = 'roads';
+      },
+      rails: () => {
+        this.scene.events.selectedTool = 'rails';
       }
     };
   }

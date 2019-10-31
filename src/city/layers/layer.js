@@ -17,8 +17,8 @@ export default class layer {
         this.list.push(cell.tiles[this.type]);
     });
 
-    this.events.on(CONST.E_MAP_LAYER_HIDE, this.onHide, this);
-    this.events.on(CONST.E_MAP_LAYER_SHOW, this.onShow, this);
+    // this.events.on(CONST.E_MAP_LAYER_HIDE, this.onHide, this); TODO: not sure what was trying to be accomplished here but it's broken
+    // this.events.on(CONST.E_MAP_LAYER_SHOW, this.onShow, this);
   }
 
   toggle () {
