@@ -5,6 +5,7 @@ export default class debug {
     this.scene = options.scene;
     this.globals = this.scene.globals;
     this.toggleLayer = this.toggleLayerInit();
+    this.toggleTool = this.toggleToolInit();
 
     this.gui = new dat.GUI();
     this.gui.closed = false;
@@ -45,6 +46,17 @@ export default class debug {
     //g3.add(this.toggleLayer, 'subway', 'Toggle Subway');
     //g3.add(this.toggleLayer, 'pipes', 'Toggle Pipes');
     //g3.open();
+
+    let tools = this.gui.addFolder('Tools');
+    tools.add(this.toggleTool, 'roads', 'Roads');
+  }
+
+  toggleToolInit() {
+    return {
+      roads: () => {
+        this.scene.events.selectedTool = 'roads';
+      }
+    };
   }
 
   toggleLayerInit () {

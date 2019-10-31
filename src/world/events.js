@@ -5,8 +5,8 @@ export default class events {
   constructor(options) {
     this.scene = options.scene;
     //this.selectedTool = CONST.TOOL_CENTER;
-    //this.selectedTool = CONST.TOOL_QUERY;
-    this.selectedTool = CONST.TOOL_ROADS;
+    this.selectedTool = CONST.TOOL_QUERY;
+    //this.selectedTool = CONST.TOOL_ROADS;
     this.register();
 
     this.tools = {};

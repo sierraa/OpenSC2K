@@ -41,7 +41,7 @@ export default class world extends Phaser.Scene {
 
     //this.ui = new ui({ scene: this });
     this.viewport = new viewport({ scene: this });
-    this._events = new events({ scene: this });
+    this.events = new events({ scene: this });
     this.debug = new debug({ scene: this });
   }
 
